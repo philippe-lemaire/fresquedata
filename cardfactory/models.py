@@ -5,7 +5,7 @@ from file_validator.models import DjangoFileValidator
 
 # Create your models here.
 class Card(models.Model):
-    title = models.TextField("Titre", max_length=200, unique=True)
+    title = models.CharField("Titre", max_length=200, unique=True)
     batch = models.IntegerField("Numéro de Lot", default=1)
     illustration = models.ImageField(
         blank=True,
@@ -30,4 +30,7 @@ class Card(models.Model):
     illustation_footnote = models.CharField(
         "Note sur l'illustration", max_length=300, blank=True
     )
-    content = HTMLField("Verso de la carte", max_length=1000, blank=True)
+    content = HTMLField("Verso de la carte", max_length=3000, blank=True)
+
+    def __str__(self):
+        return f"Lot {self.batch} : {self.title}"
