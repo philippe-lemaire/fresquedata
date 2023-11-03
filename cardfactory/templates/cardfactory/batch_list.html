@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}Les Cartes{% endblock title %}
+{% block content %}
+<h1>Les Lots</h1>
+
+<ol>
+{% for batch in batch_list %}
+<li><a href="{% url 'cardfactory:card_list_per_batch' batch %}">Lot {{ batch }}</a></li>
+
+{% endfor %}
+</ol>
+{% endblock content %}

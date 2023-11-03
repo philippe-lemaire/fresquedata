@@ -7,6 +7,7 @@ from file_validator.models import DjangoFileValidator
 class Card(models.Model):
     title = models.CharField("Titre", max_length=200, unique=True)
     batch = models.IntegerField("Numéro de Lot", default=1)
+    card_number = models.IntegerField("Numéro de carte dans le lot", blank=True)
     illustration = models.ImageField(
         blank=True,
         upload_to="photos/",
