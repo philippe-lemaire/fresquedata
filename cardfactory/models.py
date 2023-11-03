@@ -28,9 +28,9 @@ class Card(models.Model):
         ],  # => 5 MB
     )
     illustation_footnote = models.CharField(
-        "Note sur l'illustration", max_length=300, blank=True
+        "Note sur l'illustration", max_length=500, blank=True
     )
-    content = HTMLField("Verso de la carte", max_length=3000, blank=True)
+    content = HTMLField("Verso de la carte", max_length=10000, blank=True)
 
     def __str__(self):
         return f"Lot {self.batch} : {self.title}"
