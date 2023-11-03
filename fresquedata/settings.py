@@ -137,3 +137,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # whitenoise
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+FILE_UPLOAD_HANDLERS = [
+    "django.core.files.uploadhandler.TemporaryFileUploadHandler",
+]
+FILE_VALIDATOR_ERROR_MESSAGE = "{current_file_name} n’est pas valide, la taille du fichier ne doit pas dépasser 5 Mo."
