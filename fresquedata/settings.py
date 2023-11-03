@@ -27,7 +27,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 environment = os.getenv("ENVIRONMENT")
 DEBUG = environment == "development"
 
-ALLOWED_HOSTS = ["fresquedata.tuba-lyon.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "fresquedata.tuba-lyon.com"]
 
 
 # Application definition

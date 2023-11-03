@@ -30,16 +30,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cardfactory:card_list' %}">Les Cartes</a>
+                </li>
+                <!--
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'cardfactory:batch_list' %}">Les Cartes par Lots</a>
                 </li>
+            -->
                 <!--<li class="nav-item">
                     <a class="nav-link" href="#">Actualités</a>
                 </li>-->
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cardfactory:card_list' %}">Toutes les cartes</a>
-                </li>
+
                 <!--<a class="dropdown-item" href="#">Action</a>-->
             </ul>
             <!-- search bar-->
