@@ -34,7 +34,7 @@ def batch_list(request):
 def card_list_per_batch(request, batch):
     template_name = "cardfactory/card_list.html"
     all_cards = Card.objects.all()
-    queryset = all_cards.filter(batch=batch)
+    queryset = all_cards.filter(batch=batch).order_by("card_number", "pk")
     batches = list(set([card.batch for card in all_cards]))
     context = {"card_list": queryset, "batches_list": batches}
     return render(request, template_name, context)
