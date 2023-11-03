@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
 from .models import Card
 
 # Create your views here.
@@ -21,6 +21,16 @@ class CardListView(ListView):
             set([card.batch for card in context.get("card_list")])
         )
         return context
+
+
+class CardListCompactView(CardListView):
+    template_name = "cardfactory/card_compact_list.html"
+
+
+class CardDetailView(DetailView):
+    template_name = "cardfactory/card_detail.html"
+    model = Card
+    context_object_name = "card"
 
 
 def batch_list(request):

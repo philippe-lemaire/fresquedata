@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title%}{{card.title}}{% endblock title %}
+{% block content %}
+<h1>{{card.title}}</h1>
+
+<div class="card m-4" style="width: 44rem;">
+    <div class="card-body">
+        <h3 class="card-title">{{card.title}}</h3>
+        <img class="card-img-top" src="{% get_media_prefix %}{{card.illustration}}" alt="{{card.illustation_footnote}}">
+        <p class="card-text text-muted">{{card.illustation_footnote}}</p>
+    </div>  <!--card-body-->
+    <hr>
+    <div class="card-body">
+        <h3 class="card-title">{{card.title}}</h3>
+    <p class="card-text">{{card.content|safe}}</p>
+    </div> <!--card-body-->
+    <div class="card-footer text-muted">Lot {{card.batch}}</div>
+</div>
+{% endblock content %}
