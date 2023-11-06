@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title%}Modifier la carte {{card.title}}{% endblock title %}
+{% block content %}
+
+<h1>Modifier la carte {{card.title}}</h1>
+
+{% crispy form form.helper %}
+{% endblock content %}
