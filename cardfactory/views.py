@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DetailView
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .models import Card
 
 # Create your views here.
@@ -9,7 +12,7 @@ class IndexView(TemplateView):
     template_name = "cardfactory/index.html"
 
 
-class CardListView(ListView):
+class CardListView(LoginRequiredMixin, ListView):
     template_name = "cardfactory/card_list.html"
     model = Card
     context_object_name = "card_list"
@@ -27,12 +30,13 @@ class CardListCompactView(CardListView):
     template_name = "cardfactory/card_compact_list.html"
 
 
-class CardDetailView(DetailView):
+class CardDetailView(LoginRequiredMixin, DetailView):
     template_name = "cardfactory/card_detail.html"
     model = Card
     context_object_name = "card"
 
 
+@login_required
 def batch_list(request):
     template_name = "cardfactory/batch_list.html"
     cards = Card.objects.all()
@@ -41,6 +45,7 @@ def batch_list(request):
     return render(request, template_name, context)
 
 
+@login_required
 def card_list_per_batch(request, batch):
     template_name = "cardfactory/card_list.html"
     all_cards = Card.objects.all()
