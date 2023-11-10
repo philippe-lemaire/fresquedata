@@ -4,7 +4,7 @@
 {% block content %}
 <h1>Les Cartes</h1>
 
-{% regroup card_list by batch as batch_list %}
+{% regroup card_list by lot as batch_list %}
 {% for batch in batch_list %}
 <h2>Lot {{ batch.grouper }}</h2>
 <span class="text-muted">{{batch.list|length}} cartes rédigées</span>
