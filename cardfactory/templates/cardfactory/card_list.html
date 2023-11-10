@@ -23,7 +23,7 @@
             <h3 class="card-title">{{card.title}}</h3>
         <p class="card-text">{{card.content|safe}}</p>
         </div> <!--card-body-->
-        <div class="card-footer text-muted">Lot {{card.batch}}<a class="btn btn-warning float-right" href="{% url 'cardfactory:edit_card' card.pk %}">Modifier cette carte</a></div>
+        <div class="card-footer text-muted">Lot {{card.batch_foreign}}<a class="btn btn-warning float-right" href="{% url 'cardfactory:edit_card' card.pk %}">Modifier cette carte</a></div>
     </div>{% endfor %} <!--card-->
   </div> <!-- first col-->
   <div class="col">
