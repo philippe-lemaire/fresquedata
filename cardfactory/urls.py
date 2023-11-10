@@ -15,8 +15,6 @@ urlpatterns = [
     ),
     path("cartes/<int:pk>", views.CardDetailView.as_view(), name="card_detail"),
     path("cartes/modifier_carte/<int:pk>", views.edit_card, name="edit_card"),
-    path(
-        "cartes/lot_<int:batch>", views.card_list_per_batch, name="card_list_per_batch"
-    ),
+    path("cartes/lot/<int:pk>", views.card_list_per_batch, name="card_list_per_batch"),
     path("lots", views.batch_list, name="batch_list"),
 ]

@@ -23,14 +23,16 @@
             <h3 class="card-title">{{card.title}}</h3>
         <p class="card-text">{{card.content|safe}}</p>
         </div> <!--card-body-->
-        <div class="card-footer text-muted">Lot {{card.batch_foreign}}<a class="btn btn-warning float-right" href="{% url 'cardfactory:edit_card' card.pk %}">Modifier cette carte</a></div>
+        <div class="card-footer text-muted">Lot {{card.lot}}<a class="btn btn-warning float-right" href="{% url 'cardfactory:edit_card' card.pk %}">Modifier cette carte</a></div>
     </div>{% endfor %} <!--card-->
   </div> <!-- first col-->
   <div class="col">
     <h3>Filtrer par lot</h3>
     <ul class="list-group">
     {% for batch in batches_list %}
-        <li class="list-group-item"><a href="{% url 'cardfactory:card_list_per_batch' batch %}">Lot {{ batch }}</a></li>
+
+    <li class="list-group-item"><a href="{% url 'cardfactory:card_list_per_batch' batch.pk %}">Lot {{ batch }}</a></li>
+
     {% endfor %}
     </ul>
   </div> <!--second col-->

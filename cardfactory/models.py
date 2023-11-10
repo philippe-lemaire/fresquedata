@@ -16,10 +16,7 @@ class Batch(models.Model):
 
 class Card(models.Model):
     title = models.CharField("Titre", max_length=200, unique=True)
-    batch = models.IntegerField("Numéro de Lot", default=1)
-    batch_foreign = models.ForeignKey(
-        Batch, on_delete=models.CASCADE, blank=True, null=True
-    )
+    lot = models.ForeignKey(Batch, on_delete=models.CASCADE, blank=True, null=True)
     card_number = models.IntegerField(
         "Numéro de carte dans le lot", blank=True, default=1
     )
