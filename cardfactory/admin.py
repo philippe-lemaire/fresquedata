@@ -6,7 +6,11 @@ from .models import Card, Batch
 
 class CardAdmin(admin.ModelAdmin):
     search_fields = ["title", "content"]
-    list_display = ["card_number", "title", "lot"]
+    list_display = [
+        "lot",
+        "card_number",
+        "title",
+    ]
     list_filter = ["lot"]
     ordering = ["lot", "card_number"]
 
