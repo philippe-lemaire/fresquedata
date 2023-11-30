@@ -19,7 +19,10 @@ class CardListView(LoginRequiredMixin, ListView):
     template_name = "cardfactory/card_list.html"
     model = Card
     context_object_name = "card_list"
-    ordering = ["lot", "card_number", "pk"]
+    ordering = [
+        "lot",
+        "card_number",
+    ]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

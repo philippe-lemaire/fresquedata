@@ -13,6 +13,9 @@ class Batch(models.Model):
     def __str__(self):
         return f"{self.number} : {self.name}"
 
+    class Meta:
+        ordering = ["number"]
+
 
 class Card(models.Model):
     title = models.CharField("Titre", max_length=200, unique=True)
