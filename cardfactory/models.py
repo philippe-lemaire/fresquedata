@@ -46,4 +46,4 @@ class Card(models.Model):
     content = HTMLField("Verso de la carte", max_length=10000, blank=True)
 
     def __str__(self):
-        return f"Lot {self.batch} : {self.title}"
+        return f"Lot {self.lot}, {self.title}"
