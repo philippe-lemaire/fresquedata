@@ -59,7 +59,7 @@ def card_list_per_batch(request, pk):
 @login_required
 def edit_card(request, pk):
     card = Card.objects.get(pk=pk)
-    form = CardForm(request.POST or None, instance=card)
+    form = CardForm(request.POST or None, request.FILES or None, instance=card)
     if request.method == "POST":
         if form.is_valid():
             form.save()
